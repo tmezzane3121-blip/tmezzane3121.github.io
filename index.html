@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tossad Mezzane — Étudiant en Informatique</title>
+    <meta name="description" content="CV en ligne de Tossad Mezzane, étudiant en 2ème année d'informatique à la Faculté des Sciences Semlalia, Marrakech.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="antialiased">
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-5">
+        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+            <a href="#header" class="font-serif text-xl text-white">T<span class="text-indigo-400">.</span>M</a>
+
+            <!-- Liens desktop -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors">À propos</a>
+                <a href="#skills" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors">Compétences</a>
+                <a href="#education" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors">Formation</a>
+                <a href="#projects" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors">Projets</a>
+                <a href="#contact" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <button id="menu-toggle" class="md:hidden text-white text-xl focus:outline-none" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-black/95 backdrop-blur-xl border-l border-white/10 z-50 flex flex-col p-8 pt-20 gap-6 md:hidden">
+            <button id="menu-close" class="absolute top-6 right-6 text-white text-xl focus:outline-none" aria-label="Fermer">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="#about" class="mobile-link text-lg text-neutral-300 hover:text-indigo-400 transition-colors">À propos</a>
+            <a href="#skills" class="mobile-link text-lg text-neutral-300 hover:text-indigo-400 transition-colors">Compétences</a>
+            <a href="#education" class="mobile-link text-lg text-neutral-300 hover:text-indigo-400 transition-colors">Formation</a>
+            <a href="#projects" class="mobile-link text-lg text-neutral-300 hover:text-indigo-400 transition-colors">Projets</a>
+            <a href="#contact" class="mobile-link text-lg text-neutral-300 hover:text-indigo-400 transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <header id="header" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/seed/moon/1920/1080" alt="" class="w-full h-full object-cover" loading="eager">
+            <div class="hero-bg absolute inset-0"></div>
+        </div>
+
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl float"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl float" style="animation-delay:-3s"></div>
+
+        <!-- Contenu principal -->
+        <div class="relative z-10 text-center px-6 max-w-3xl">
+            <!-- Photo de profil -->
+            <div class="w-40 h-40 md:w-48 md:h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-indigo-500/40 pulse-glow">
+                <img src="https://picsum.photos/seed/girl/400/400" alt="Photo de Tossad Mezzane" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Nom -->
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight text-gradient mb-4">
+                Tossad Mezzane
+            </h1>
+
+            <!-- Titre professionnel -->
+            <p class="text-xl md:text-2xl text-indigo-400 font-light mb-8">
+                Étudiant en 2ème Année Informatique
+            </p>
+
+            <!-- Icônes de contact -->
+            <div class="flex items-center justify-center gap-6 mb-8">
+                <a href="mailto:tossadmezzane23@email.com" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-indigo-400 hover:border-indigo-500/50 transition-all duration-300" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="www.linkedin.com/in/tossad-mezzane-1aa23437b" target="_blank" rel="noopener" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-indigo-400 hover:border-indigo-500/50 transition-all duration-300" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/tmezzane3121-blip" target="_blank" rel="noopener" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-indigo-400 hover:border-indigo-500/50 transition-all duration-300" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <!-- Coordonnées texte -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-neutral-500">
+                <span><i class="fas fa-envelope mr-2 text-neutral-600"></i>tossadmezzane23@gmail.com</span>
+                <span class="hidden sm:inline text-neutral-700">|</span>
+                <span><i class="fas fa-map-marker-alt mr-2 text-neutral-600"></i>Marrakech, Maroc</span>
+            </div>
+        </div>
+
+        <!-- Indicateur de scroll -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+            <a href="#about" class="text-neutral-600 hover:text-neutral-400 transition-colors animate-bounce block">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ===================== À PROPOS ===================== -->
+    <section id="about" class="py-32 px-6 relative">
+        <div class="max-w-4xl mx-auto">
+            <div id="react-about-title"></div>
+            <div class="glass rounded-2xl p-8 md:p-12 shimmer reveal">
+                <p class="text-lg md:text-xl text-neutral-300 leading-relaxed mb-6">
+                    Je suis Tossad Mezzane, étudiant en 2ème année de licence Informatique à la Faculté des Sciences Semlalia de Marrakech. Après avoir obtenu mon Baccalauréat Sciences Mathématiques en 2024, j'ai choisi de me spécialiser en informatique par passion pour la programmation et la résolution de problèmes algorithmiques.
+                </p>
+                <p class="text-lg md:text-xl text-neutral-300 leading-relaxed mb-6">
+                    Mon parcours académique m'a permis de découvrir différents domaines de l'informatique : du développement web avec HTML, CSS et JavaScript, à la programmation système avec C/C++ et SFML, en passant par la conception de bases de données avec MySQL. Je suis quelqu'un de curieux qui aime comprendre le fonctionnement des choses en profondeur.
+                </p>
+                <p class="text-lg md:text-xl text-neutral-300 leading-relaxed">
+                    En dehors des études, je m'intéresse aux nouvelles technologies et au sport. Mon objectif est de continuer à progresser en développement pour, à terme, travailler dans le domaine du software engineering ou du développement web full stack.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== COMPÉTENCES ===================== -->
+    <section id="skills" class="py-32 px-6 relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div id="react-skills-title"></div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Compétences techniques -->
+                <div class="glass rounded-2xl p-8 reveal">
+                    <h3 class="font-serif text-2xl mb-8 flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center">
+                            <i class="fas fa-code text-indigo-400"></i>
+                        </span>
+                        Compétences Techniques
+                    </h3>
+                    <div class="space-y-6" id="technical-skills">
+                        <!-- C / C++ -->
+                        <div class="skill-item" data-level="80">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-neutral-200">C / C++</span>
+                                <span class="text-sm text-neutral-500 skill-percent">0%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full rounded-full bg-gradient-to-r from-blue-500 to-blue-400"></div>
+                            </div>
+                        </div>
+                        <!-- HTML / CSS -->
+                        <div class="skill-item" data-level="85">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-neutral-200">HTML / CSS</span>
+                                <span class="text-sm text-neutral-500 skill-percent">0%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full rounded-full bg-gradient-to-r from-indigo-500 to-indigo-400"></div>
+                            </div>
+                        </div>
+                        <!-- JavaScript -->
+                        <div class="skill-item" data-level="70">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-neutral-200">JavaScript</span>
+                                <span class="text-sm text-neutral-500 skill-percent">0%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full rounded-full bg-gradient-to-r from-yellow-500 to-yellow-400"></div>
+                            </div>
+                        </div>
+                        <!-- MySQL -->
+                        <div class="skill-item" data-level="75">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-neutral-200">MySQL</span>
+                                <span class="text-sm text-neutral-500 skill-percent">0%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full rounded-full bg-gradient-to-r from-green-500 to-green-400"></div>
+                            </div>
+                        </div>
+                        <!-- SFML -->
+                        <div class="skill-item" data-level="65">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-neutral-200">SFML</span>
+                                <span class="text-sm text-neutral-500 skill-percent">0%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full rounded-full bg-gradient-to-r from-purple-500 to-purple-400"></div>
+                            </div>
+                        </div>
+                        <!-- Python -->
+                        <div class="skill-item" data-level="60">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-neutral-200">Python</span>
+                                <span class="text-sm text-neutral-500 skill-percent">0%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full rounded-full bg-gradient-to-r from-cyan-500 to-cyan-400"></div>
+                            </div>
+                        </div>
+                        <!-- Git -->
+                        <div class="skill-item" data-level="60">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-neutral-200">Git</span>
+                                <span class="text-sm text-neutral-500 skill-percent">0%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-progress h-full rounded-full bg-gradient-to-r from-orange-500 to-orange-400"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compétences personnelles -->
+                <div class="glass rounded-2xl p-8 reveal">
+                    <h3 class="font-serif text-2xl mb-8 flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center">
+                            <i class="fas fa-user text-indigo-400"></i>
+                        </span>
+                        Compétences Personnelles
+                    </h3>
+                    <div class="space-y-5" id="personal-skills">
+                        <div class="skill-stars" data-level="5">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-neutral-200">Persévérance</span>
+                                <div class="stars flex gap-1">
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-stars" data-level="4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-neutral-200">Travail d'équipe</span>
+                                <div class="stars flex gap-1">
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-stars" data-level="4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-neutral-200">Résolution de problèmes</span>
+                                <div class="stars flex gap-1">
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-stars" data-level="4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-neutral-200">Adaptabilité</span>
+                                <div class="stars flex gap-1">
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-stars" data-level="5">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-neutral-200">Curiosité intellectuelle</span>
+                                <div class="stars flex gap-1">
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-stars" data-level="4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-neutral-200">Communication</span>
+                                <div class="stars flex gap-1">
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                    <i class="star fas fa-star text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FORMATION ===================== -->
+    <section id="education" class="py-32 px-6 relative">
+        <div class="max-w-4xl mx-auto">
+            <div id="react-education-title"></div>
+
+            <div id="education-accordion" class="space-y-4">
+                <!-- Licence 2ème année -->
+                <div class="accordion-item glass rounded-2xl overflow-hidden reveal">
+                    <button class="accordion-header w-full flex items-center justify-between p-6 md:p-8 text-left group hover:bg-white/[0.02] transition-colors">
+                        <div class="flex-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                                <h4 class="text-lg font-medium text-white group-hover:text-indigo-400 transition-colors">2ème Année — Licence Informatique</h4>
+                                <span class="text-xs text-indigo-400/80 bg-indigo-500/10 px-3 py-1 rounded-full w-fit">2025 — 2026</span>
+                            </div>
+                            <p class="text-neutral-500 text-sm">Faculté des Sciences Semlalia, Marrakech</p>
+                        </div>
+                        <i class="accordion-arrow fas fa-chevron-down text-neutral-600 ml-4 mt-1"></i>
+                    </button>
+                    <div class="accordion-content open">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8">
+                            <p class="text-neutral-400 text-sm mb-4">Programmation avancée en C/C++, structures de données, algorithmique, bases de données MySQL, développement web, systèmes d'exploitation Linux et réseaux informatiques.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">C / C++</span>
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">SFML</span>
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">MySQL</span>
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">HTML / CSS</span>
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">JavaScript</span>
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">UML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1ère année -->
+                <div class="accordion-item glass rounded-2xl overflow-hidden reveal">
+                    <button class="accordion-header w-full flex items-center justify-between p-6 md:p-8 text-left group hover:bg-white/[0.02] transition-colors">
+                        <div class="flex-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                                <h4 class="text-lg font-medium text-white group-hover:text-indigo-400 transition-colors">1ère Année — Licence Informatique</h4>
+                                <span class="text-xs text-indigo-400/80 bg-indigo-500/10 px-3 py-1 rounded-full w-fit">2024 — 2025</span>
+                            </div>
+                            <p class="text-neutral-500 text-sm">Faculté des Sciences Semlalia, Marrakech</p>
+                        </div>
+                        <i class="accordion-arrow fas fa-chevron-down text-neutral-600 ml-4 mt-1"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8">
+                            <p class="text-neutral-400 text-sm mb-4">Introduction à l'algorithmique, initiation à la programmation en C, mathématiques pour l'informatique, logique et architectures des ordinateurs.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">Algorithmique</span>
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">Langage C</span>
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">Mathématiques</span>
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">Logique</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Baccalauréat -->
+                <div class="accordion-item glass rounded-2xl overflow-hidden reveal">
+                    <button class="accordion-header w-full flex items-center justify-between p-6 md:p-8 text-left group hover:bg-white/[0.02] transition-colors">
+                        <div class="flex-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                                <h4 class="text-lg font-medium text-white group-hover:text-indigo-400 transition-colors">Baccalauréat Sciences Mathématiques</h4>
+                                <span class="text-xs text-indigo-400/80 bg-indigo-500/10 px-3 py-1 rounded-full w-fit">2024</span>
+                            </div>
+                            <p class="text-neutral-500 text-sm">Lycée — Marrakech</p>
+                        </div>
+                        <i class="accordion-arrow fas fa-chevron-down text-neutral-600 ml-4 mt-1"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 md:px-8 pb-6 md:pb-8">
+                            <p class="text-neutral-400 text-sm mb-4">Baccalauréat Sciences Mathématiques. Formation solide en mathématiques, physique-chimie et sciences de la vie et de la terre qui a constitué la base de mon orientation vers l'informatique.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">Mathématiques</span>
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">Physique-Chimie</span>
+                                <span class="tech-tag text-xs px-3 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 cursor-default">SVT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROJETS (React) ===================== -->
+    <section id="projects" class="py-32 px-6 relative">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div id="react-projects-title"></div>
+            <div id="react-projects"></div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT (React) ===================== -->
+    <section id="contact" class="py-32 px-6 relative">
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-2xl mx-auto relative z-10">
+            <div id="react-contact-title"></div>
+            <div id="react-contact-form"></div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="border-t border-white/5 py-12 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <p class="text-neutral-600 text-sm">&copy; 2025 Tossad Mezzane. Tous droits réservés.</p>
+            <div class="flex items-center gap-5">
+                <a href="mailto:tossadmezzane23@email.com" class="text-neutral-600 hover:text-indigo-400 transition-colors" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="www.linkedin.com/in/tossad-mezzane-1aa23437b" target="_blank" rel="noopener" class="text-neutral-600 hover:text-indigo-400 transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/tmezzane3121-blip" target="_blank" rel="noopener" class="text-neutral-600 hover:text-indigo-400 transition-colors" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton scroll top -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 bg-indigo-500 hover:bg-indigo-600 rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none z-50" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up text-sm"></i>
+    </button>
+
+    <!-- JS personnalisé (jQuery + React/Babel) -->
+    <script type="text/babel" src="script.js"></script>
+
+</body>
+</html>
