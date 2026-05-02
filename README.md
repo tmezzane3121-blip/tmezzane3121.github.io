@@ -62,16 +62,27 @@ Google Fonts	Typographie	Inter (sans-serif) + Playfair Display (serif)
 tossad-mezzane.github.io/
 │
 ├── index.html ← Page principale (structure HTML sémantique)
+
 ├── style.css ← Styles CSS natifs (glass, animations, responsive)
+
 ├── script.js ← Logique jQuery + Composants ReactJS (JSX via Babel)
+
 ├── README.md ← Documentation du projet (ce fichier)
+
 │
+
 └── (CDN externes)
+
 ├── Tailwind CSS
+
 ├── jQuery 3.7.1
+
 ├── React 18 + ReactDOM
+
 ├── Babel Standalone
+
 ├── Font Awesome 6.5
+
 └── Google Fonts
 
 text
